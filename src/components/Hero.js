@@ -135,38 +135,7 @@ export const Hero = () => {
             >
               {t('demo_button')}
             </Button>
-            <br />
-            <Button
-              variant="outlined"
-              onClick={() => navigate('/products')}
-              endIcon={
-                <Inventory2Icon
-                  sx={{
-                    transform: isAr ? 'rotate(180deg)' : 'none',
-                    ml: isAr ? 0 : 1,
-                    mr: isAr ? 1 : 0
-                  }}
-                />
-              }
-              sx={{
-                borderColor: 'primary.main',
-                color: 'primary.main',
-                py: { xs: 1.5, md: 1.8 },
-                px: { xs: 4, md: 6 },
-                width: '80%',
-                mb:1,
-                borderRadius: '40px',
-                fontSize: { xs: '1rem', md: '1.05rem' },
-                fontWeight: 700,
-                '&:hover': {
-                  borderColor: 'primary.dark',
-                  color: 'primary.dark',
-                  backgroundColor: alpha(theme.palette.primary.main, 0.05)
-                }
-              }}
-            >
-              {t('hero_products_button')}
-            </Button>
+           
           </Box>
 
           {/* العمود الأيمن: الصورة والبانر */}
