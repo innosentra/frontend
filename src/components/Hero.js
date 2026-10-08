@@ -3,7 +3,6 @@ import { Container, Typography, Box, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { alpha, useTheme } from '@mui/material/styles';
 import headImage from '../images/head.webp';
-import webBanner from '../images/Web_Banner.webp'; // <-- استيراد صورة البانر
 import { useNavigate } from 'react-router-dom';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import Inventory2Icon from '@mui/icons-material/Inventory2';
@@ -177,19 +176,7 @@ export const Hero = () => {
             </Box>
 
             {/* --- إضافة الصورة الجديدة أسفل القسم الأيمن --- */}
-            <Box
-              component="img"
-              src={webBanner}
-              alt="Web Banner"
-              sx={{
-                width: '90%', 
-                mb:3,// يمكنك تعديل هذا العرض حسب الحاجة
-                height: 'auto',
-                borderRadius: '15px', // حواف دائرية للتناسق مع التصميم
-                display: 'block',
-                boxShadow: '0 4px 15px rgba(0,0,0,0.1)' // تأثير ظل خفيف إضافي (اختياري)
-              }}
-            />
+           
           </Box>
         </Box>
       </Container>
