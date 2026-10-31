@@ -37,7 +37,7 @@ import { EdgeAnalytics } from './components/EdgeAnalytics';
 import { SurveillanceTower } from './components/SurveillanceTower';
 import { HomeMonitor } from './components/HomeMonitor';
 import heroImage from './images/logo.webp';
-
+import { Exhibitions } from './components/Exhibitions';
 
 const preloadImage = (src) => {
   return new Promise((resolve) => {
@@ -255,6 +255,7 @@ function AppContent() {
           <Route path="/home-monitor" element={<HomeMonitor />} />
           <Route path="/security-info" element={<SecurityInfo />} />
           <Route path="/request-demo" element={<DemoRequest />} />
+          <Route path="/exhibitions" element={<Exhibitions />} />
         </Routes>
 
         <Footer />

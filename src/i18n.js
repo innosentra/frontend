@@ -484,6 +484,21 @@ ar: {
   "home_monitor_f5": "مراقبة للمكان بدقة 24/7.",
   "home_monitor_f6": "مرونة عالية في حال وجود طلبات مخصصة.",
   "home_monitor_f7": "أبعاد الجهاز صغيرة 95 مم * 66 مم.",
+
+  "nav_exhibitions": "الفعاليات",
+"exhibitions_page_title": "الفعاليات",
+"exhibitions_page_subtitle": "نصنع المستقبل في أهم المحافل التقنية. تعرف على أحدث مشاركاتنا واكتشف كيف نحول البيانات إلى قرارات من خلال حلول الذكاء الاصطناعي.",
+"exh_status_upcoming": "قادم",
+"exh_status_past": "سابق",
+"exh_book_meeting": "احجز اجتماعاً معنا",
+"exh_leap_title": "مؤتمر LEAP 2025",
+"exh_leap_desc": "سنقوم باستعراض أحدث أجهزة Edge AI لتحليلات التجزئة، وسنكشف عن نظام برج المراقبة المخصص لمواقع البناء.",
+"exh_gitex_title": "جيتكس جلوبال 2023",
+"exh_gitex_desc": "شاركنا في أكبر حدث تقني في دبي لتقديم حلولنا المبتكرة في إدارة حركة المرور الذكية وأنظمة التعرف على الوجوه.",
+"exh_hannover_title": "معرض هانوفر ميسي",
+"exh_hannover_desc": "قمنا بعرض حلول الرؤية الصناعية الخاصة بنا للفحص الآلي الدقيق وتقليل هدر المواد في المصانع الأوروبية.",
+"exh_gitex_europe_desc": "شاركنا في معرض جيتكس أوروبا لعرض أحدث حلول الذكاء الاصطناعي.",
+"exh_ai_everything_desc": "استعرضنا تقنياتنا المبتكرة في المعرض العالمي للذكاء الاصطناعي في أبوظبي.",
   }
 },
 
@@ -967,6 +982,20 @@ ar: {
   "home_monitor_f6": "High flexibility for custom requests.",
   "home_monitor_f7": "Device dimensions: small, 95 mm * 66 mm.",
 
+  "nav_exhibitions": "Events",
+"exhibitions_page_title": "Events",
+"exhibitions_page_subtitle": "Shaping the future at top tech events. Discover our latest participations and see how we turn visual data into decisions through AI.",
+"exh_status_upcoming": "Upcoming",
+"exh_status_past": "Past",
+"exh_book_meeting": "Book a Meeting",
+"exh_leap_title": "LEAP 2025",
+"exh_leap_desc": "We will be showcasing our latest Edge AI analytics devices for retail, and unveiling our Surveillance Tower for construction sites.",
+"exh_gitex_title": "GITEX Global 2023",
+"exh_gitex_desc": "We participated in Dubai's largest tech event to present our innovative smart traffic management and facial recognition solutions.",
+"exh_hannover_title": "Hannover Messe",
+"exh_hannover_desc": "We demonstrated our Industrial Vision solutions for precision automated inspection and waste reduction in European factories.",
+"exh_gitex_europe_desc": "We participated in GITEX Europe to showcase our latest AI solutions.",
+"exh_ai_everything_desc": "We showcased our innovative technologies at the Global AI Exhibition in Abu Dhabi.",
 }
   },
 
@@ -1443,8 +1472,22 @@ ar: {
   "home_monitor_f4": "Nahtlose mobile Integration: Verwalten und steuern Sie Ihr System ganz einfach von überall über die mobile App.",
   "home_monitor_f5": "Präzise 24/7-Überwachung der Räumlichkeiten.",
   "home_monitor_f6": "Hohe Flexibilität bei individuellen Anfragen.",
-  "home_monitor_f7": "Geräteabmessungen: klein, 95 mm * 66 mm."
-  
+  "home_monitor_f7": "Geräteabmessungen: klein, 95 mm * 66 mm.",
+
+  "nav_exhibitions": "Veranstaltungen",
+"exhibitions_page_title": "Veranstaltungen",
+"exhibitions_page_subtitle": "Die Zukunft auf den wichtigsten Tech-Events gestalten. Entdecken Sie unsere neuesten Teilnahmen und sehen Sie, wie wir mit KI Daten in Entscheidungen verwandeln.",
+"exh_status_upcoming": "Bevorstehend",
+"exh_status_past": "Vergangen",
+"exh_book_meeting": "Termin buchen",
+"exh_leap_title": "LEAP 2025",
+"exh_leap_desc": "Wir werden unsere neuesten Edge-AI-Analysegeräte für den Einzelhandel vorstellen und unseren Überwachungsturm für Baustellen enthüllen.",
+"exh_gitex_title": "GITEX Global 2023",
+"exh_gitex_desc": "Wir haben an Dubais größtem Tech-Event teilgenommen, um unsere innovativen Lösungen für intelligentes Verkehrsmanagement vorzustellen.",
+"exh_hannover_title": "Hannover Messe",
+"exh_hannover_desc": "Wir haben unsere Industrial Vision-Lösungen für die präzise automatisierte Inspektion und Abfallreduzierung in europäischen Fabriken demonstriert.",
+  "exh_gitex_europe_desc": "Wir haben an der GITEX Europe teilgenommen, um unsere neuesten KI-Lösungen vorzustellen.",
+"exh_ai_everything_desc": "Wir haben unsere innovativen Technologien auf der globalen KI-Messe in Abu Dhabi präsentiert.",
 }
   }
 };

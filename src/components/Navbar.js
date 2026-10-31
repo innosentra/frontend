@@ -136,7 +136,9 @@ export const Navbar = () => {
         </Collapse>
         <Divider sx={{ my: 1 }} />
         <ListItemButton onClick={() => handleNavigation('#home')}><ListItemText primary={t('nav_home')} /></ListItemButton>
-        
+        <ListItemButton onClick={() => handleNavigation('/exhibitions')}>
+   <ListItemText primary={t('nav_exhibitions')} />
+</ListItemButton>
         <ListItemButton onClick={() => setMobileSolutionsOpen(!mobileSolutionsOpen)}>
           <ListItemText primary={t('nav_solutions')} />
           {mobileSolutionsOpen ? <ExpandLess /> : <ExpandMore />}
@@ -235,7 +237,9 @@ export const Navbar = () => {
                 </Menu>
 
                 <Divider orientation="vertical" flexItem sx={{ mx: 1, height: 24, alignSelf: 'center', bgcolor: alpha(theme.palette.custom.whitePure, 0.2) }} />
-
+                <Button onClick={() => handleNavigation('/exhibitions')} sx={navButtonStyle}>
+  {t('nav_exhibitions')}
+</Button>
                 <Button onClick={handleMenuClick} endIcon={<KeyboardArrowDownIcon />} sx={navButtonStyle}>
                   {t('nav_solutions')}
                 </Button>
