@@ -1,7 +1,7 @@
-import React, { useState, useEffect,useMemo, createContext } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { I18nextProvider } from 'react-i18next';
 
+import { I18nextProvider } from 'react-i18next';
+import React, { useState, useEffect, useMemo, createContext, useContext } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, Outlet, useParams } from 'react-router-dom';
 // الاستيرادات الأساسية
 import './styles/global.css';
 import "@fontsource/sn-pro/400.css";
@@ -209,8 +209,28 @@ const LanguageProvider = ({ children }) => {
   );
 };
 
+
+const LanguageWrapper = () => {
+  const { lang } = useParams();
+  const { language, setLanguage, availableLanguages } = useContext(LanguageContext);
+  const isValidLang = availableLanguages.includes(lang);
+
+  useEffect(() => {
+    if (isValidLang && lang !== language) {
+      setLanguage(lang);
+    }
+  }, [isValidLang, lang, language, setLanguage]);
+
+  if (!isValidLang) {
+    return <Navigate to={`/${language}`} replace />;
+  }
+
+  return <Outlet />;
+}; 
+
 function AppContent() {
   const [homeComponents, setHomeComponents] = useState(null);
+  const { language } = useContext(LanguageContext);
 
   const handleHomeLoad = (comps) => {
     const formatted = {
@@ -231,32 +251,40 @@ function AppContent() {
         <Navbar />
         
         <Routes>
-          <Route path="/" element={
-            <HomeLoader 
-              savedComponents={homeComponents} 
-              onSave={handleHomeLoad} 
-            />
-          } />
-          
-          <Route path="/supermarket" element={<RetailSolutions />} />
-          <Route path="/traffic" element={<Traffic />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="/industry" element={<Industry />} />
-          <Route path="/construction" element={<Construction />} />
-          <Route path="/data-recovery" element={<DataRecovery />} />
-          <Route path="/site-info" element={<SiteInfo />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/cookies" element={<CookiesSettings />} />
-          <Route path="/terms" element={<TermsOfUse />} />
-          <Route path="/agriculture" element={<Agriculture />} />
-          <Route path="/edge-analytics" element={<EdgeAnalytics />} />
-          <Route path="/surveillance-tower" element={<SurveillanceTower />} />
-          <Route path="/home-monitor" element={<HomeMonitor />} />
-          <Route path="/security-info" element={<SecurityInfo />} />
-          <Route path="/request-demo" element={<DemoRequest />} />
-          <Route path="/exhibitions" element={<Exhibitions />} />
-        </Routes>
+  {/* توجيه الرابط الرئيسي تلقائياً للغة المكتشفة أو المختارة */}
+  <Route path="/" element={<Navigate to={`/${language}`} replace />} />
+
+  {/* جميع المسارات داخل متغير اللغة */}
+  <Route path="/:lang" element={<LanguageWrapper />}>
+    <Route index element={
+      <HomeLoader 
+        savedComponents={homeComponents} 
+        onSave={handleHomeLoad} 
+      />
+    } />
+    <Route path="supermarket" element={<RetailSolutions />} />
+    <Route path="traffic" element={<Traffic />} />
+    <Route path="security" element={<Security />} />
+    <Route path="industry" element={<Industry />} />
+    <Route path="construction" element={<Construction />} />
+    <Route path="data-recovery" element={<DataRecovery />} />
+    <Route path="site-info" element={<SiteInfo />} />
+    <Route path="contact" element={<Contact />} />
+    <Route path="privacy-policy" element={<PrivacyPolicy />} />
+    <Route path="cookies" element={<CookiesSettings />} />
+    <Route path="terms" element={<TermsOfUse />} />
+    <Route path="agriculture" element={<Agriculture />} />
+    <Route path="edge-analytics" element={<EdgeAnalytics />} />
+    <Route path="surveillance-tower" element={<SurveillanceTower />} />
+    <Route path="home-monitor" element={<HomeMonitor />} />
+    <Route path="security-info" element={<SecurityInfo />} />
+    <Route path="request-demo" element={<DemoRequest />} />
+    <Route path="exhibitions" element={<Exhibitions />} />
+  </Route>
+
+  {/* أي رابط خاطئ أو قديم بدون لغة يعود للرئيسية باللغة الحالية */}
+  <Route path="*" element={<Navigate to={`/${language}`} replace />} />
+</Routes>
 
         <Footer />
         <Analytics />

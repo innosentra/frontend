@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import EventIcon from '@mui/icons-material/Event';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import StorefrontIcon from '@mui/icons-material/Storefront';
-
 import gitexEuropeBanner from '../images/Web_Banner_1764305239_GE26_E-ZONE_BANNERS_728x90PX.webp';
 import gitexEuropeBooth from '../images/IMG_4660.webp';
 import aiEverythingBanner from '../images/Email_Signature_1788511891_E-MAIL-SIGNATURE.webp';

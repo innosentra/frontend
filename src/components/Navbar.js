@@ -23,8 +23,8 @@ export const Navbar = () => {
   const { t, i18n } = useTranslation();
   
   // استخدام السياق بدلاً من التعامل المباشر
-  const { setLanguage } = useContext(LanguageContext); 
-
+  
+  const { language, setLanguage } = useContext(LanguageContext);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
@@ -52,8 +52,11 @@ export const Navbar = () => {
 
   // دالة تغيير اللغة المعدلة
   const changeLanguage = (lng) => {
-    // نستخدم دالة السياق التي تقوم باستدعاء Service وتخزين الخيار بشكل صحيح
     setLanguage(lng);
+    const pathParts = location.pathname.split('/');
+    pathParts[1] = lng; // استبدال كود اللغة القديم بالجديد
+    const newPath = pathParts.join('/') + location.search + location.hash;
+    navigate(newPath);
     handleLangMenuClose();
   };
 
@@ -61,8 +64,11 @@ export const Navbar = () => {
     handleMenuClose();
     handleProductsMenuClose();
     setMobileOpen(false);
-    if (path.startsWith('#') && location.pathname !== '/') {
-      navigate('/');
+  
+    const homePath = `/${language}`;
+  
+    if (path.startsWith('#') && location.pathname !== homePath) {
+      navigate(homePath);
       setTimeout(() => {
         const element = document.getElementById(path.replace('#', ''));
         if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -70,8 +76,10 @@ export const Navbar = () => {
     } else if (path.startsWith('#')) {
       const element = document.getElementById(path.replace('#', ''));
       if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else if (path === '/') {
+      navigate(homePath);
     } else {
-      navigate(path);
+      navigate(`/${language}${path}`);
     }
   };
 
